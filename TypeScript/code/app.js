@@ -18,6 +18,8 @@ var student1 = {
     subject: "TypeScript",
     courseCompleted: true
 };
+// function getStudentDetails (studentID: number): object {
+// }
 // function getStudentDetails (studentID: number): Student {
 //     return {
 //         studentID: 12345,

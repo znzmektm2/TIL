@@ -40,6 +40,10 @@ interface Student {
     addComment?: (comment: string) => string;
 }
 
+// function getStudentDetails (studentID: number): object {
+
+// }
+
 // function getStudentDetails (studentID: number): Student {
 //     return {
 //         studentID: 12345,
