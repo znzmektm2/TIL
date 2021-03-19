@@ -17,6 +17,7 @@ let age: number = 10;
 - 함수의 타입을 명시할 때 void는 아무것도 반환하지 않는다는 뜻이다. return 하게 되면 에러가 발생한다.
  
 ![2021-03-19 19 53 40](https://user-images.githubusercontent.com/35294456/111769663-d3159b00-88ec-11eb-8bd2-6baea294a502.png)
+
 <br>
 
 - 함수의 타입을 object라고 명시하고 object 값을 리턴하지 않으면 오류를 발생시킨다.
