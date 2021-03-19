@@ -4,5 +4,4 @@
 - 핵심적인 내용을 간결하게 요약한다.
 - 깊은 설명은 티스토리 블로그를 작성해 연결한다.
 
-![notebook-336634_640](https://user-images.githubusercontent.com/35294456/111744476-a5215e00-88ce-11eb-96d7-50ae90ea7518.jpg)
-
+![learn-1820039_640](https://user-images.githubusercontent.com/35294456/111745371-d3ec0400-88cf-11eb-98b7-7762bf02b7f2.jpg)
