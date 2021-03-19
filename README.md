@@ -4,4 +4,4 @@
 - 핵심적인 내용을 간결하게 요약한다.
 - 깊은 설명은 티스토리 블로그를 작성해 연결한다.
 
-![coffee-2351440_640](https://user-images.githubusercontent.com/35294456/111747187-5d9cd100-88d2-11eb-8eac-1e29755087d1.jpg)
+![coffee-2351440_640](https://user-images.githubusercontent.com/35294456/111747528-c126fe80-88d2-11eb-9903-66aa40bbf1fb.jpg)
