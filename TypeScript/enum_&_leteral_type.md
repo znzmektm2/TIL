@@ -1,4 +1,4 @@
-interface에서 어떤 프로퍼티의 값을 String이 아닌 내가 원하는 값(male, female)으로 제한하고 싶을 때 사용할 수 있는 방법이 있다.
+아래 interface에서 어떤 프로퍼티의 값을 String이 아닌 내가 원하는 값(예 : male, female)으로 제한하고 싶을 때 사용할 수 있는 방법이 있다.
 
 ```
 interface Student {
