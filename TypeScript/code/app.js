@@ -10,25 +10,30 @@
 //     return 100 - points;
 // }
 // //** 인터페이스 */
+var GenderType;
+(function (GenderType) {
+    GenderType["Male"] = "male";
+    GenderType["Female"] = "female";
+})(GenderType || (GenderType = {}));
 var student1 = {
     studentID: 12345,
     studentName: "Jake",
     age: 20,
-    gender: 'male',
+    gender: GenderType.Female,
     subject: "TypeScript",
     courseCompleted: true
 };
 // function getStudentDetails (studentID: number): object {
 // }
-// function getStudentDetails (studentID: number): Student {
-//     return {
-//         studentID: 12345,
-//         studentName: "Jake",
-//         gender: 'male',
-//         subject: "TypeScript",
-//         courseCompleted: true
-//     }
-// }
+function getStudentDetails(studentID) {
+    return {
+        studentID: 12345,
+        studentName: "Jake",
+        gender: "female",
+        subject: "TypeScript",
+        courseCompleted: true
+    };
+}
 function saveStudentDetails(student) {
     //student.studentID = 1111;
 }

@@ -20,11 +20,16 @@
 
 
 // //** 인터페이스 */
+enum GenderType {
+    Male = "male",
+    Female = "female"
+}
+
 let student1 = {
     studentID: 12345,
     studentName: "Jake",
     age: 20,
-    gender: 'male',
+    gender: GenderType.Female,
     subject: "TypeScript",
     courseCompleted: true
 }
@@ -33,7 +38,7 @@ interface Student {
     readonly studentID: number;
     studentName: string;
     age?: number;
-    gender: string;
+    gender: "male" | "female";
     subject: string;
     courseCompleted: boolean;
     // addComment (comment: string): string;
@@ -44,15 +49,15 @@ interface Student {
 
 // }
 
-// function getStudentDetails (studentID: number): Student {
-//     return {
-//         studentID: 12345,
-//         studentName: "Jake",
-//         gender: 'male',
-//         subject: "TypeScript",
-//         courseCompleted: true
-//     }
-// }
+function getStudentDetails (studentID: number): Student {
+    return {
+        studentID: 12345,
+        studentName: "Jake",
+        gender: "female",
+        subject: "TypeScript",
+        courseCompleted: true
+    }
+}
 
 function saveStudentDetails(student: Student): void {
     //student.studentID = 1111;
