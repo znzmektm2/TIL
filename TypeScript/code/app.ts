@@ -64,3 +64,33 @@ function saveStudentDetails(student: Student): void {
 }
 
 saveStudentDetails(student1);
+
+
+
+// //** Type Aliases */
+type StrOrNum = number | string;
+let totalCost: number;
+let orderID: StrOrNum;
+
+const calculateTotalCost = (price: StrOrNum): void => {
+
+};
+
+const findOderID = (customer: { customerId: StrOrNum, name: string}, productId: StrOrNum): StrOrNum => {
+    return orderID;
+}
+
+type StringOrNum = number | string;
+let itemPrice: number;
+
+const setItemPrice = (price: StringOrNum): void => {
+    if(typeof price === 'string') {
+        price = 0;
+    } else {
+        itemPrice = price;
+    }
+};
+
+setItemPrice(50);
+
+
