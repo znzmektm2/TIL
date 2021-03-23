@@ -34,7 +34,9 @@ price = 'free';
 - Union 타입을 사용할 때 Typeof 연산자를 사용하여 코드 검증을 수행하는 것
 
 setItemPrice 함수 내에서 itemPrice 변수에 price를 할당해 주면 에러가 발생한다. price의 타입이 number와 string을 지정한 Union 타입이기 때문에 string이 올 수 있어서 에러를 발생시킨다.
+
 ![2021-03-23 22 37 37](https://user-images.githubusercontent.com/35294456/112155164-61a95580-8c28-11eb-9c8c-bbfe5fa574c8.png)
 
 Typeof 연산자와 조건문을 사용하여 문제를 해결할 수 있다.
+
 ![2021-03-23 22 40 04](https://user-images.githubusercontent.com/35294456/112155665-daa8ad00-8c28-11eb-9cfb-93570eba68fb.png)
