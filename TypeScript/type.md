@@ -39,4 +39,4 @@ setItemPrice 함수 내에서 itemPrice 변수에 price를 할당해 주면 에�
 
 Typeof 연산자와 조건문을 사용하여 문제를 해결할 수 있다.
 
-![2021-03-23 22 53 12](https://user-images.githubusercontent.com/35294456/112157441-8ef70300-8c2a-11eb-9166-62700393222c.png)
+![2021-03-23 22 52 52](https://user-images.githubusercontent.com/35294456/112157659-c8c80980-8c2a-11eb-8810-44470c4e2214.png)
