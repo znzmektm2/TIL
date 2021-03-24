@@ -53,7 +53,7 @@ sendGreeting('Hello', 'Mark');
 ![2021-03-25 00 38 49](https://user-images.githubusercontent.com/35294456/112338845-79eda300-8d02-11eb-9fc8-f5c5e88916f4.png)
 
 
-**화살표 함수로 표현하는 방법**
+## 화살표 함수로 표현하는 방법
 ```
 const sendGreeting = (message: string, userName = 'there') : void => console.log(`${message}, ${userName}`);
 
