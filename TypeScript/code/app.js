@@ -38,3 +38,26 @@ function saveStudentDetails(student) {
     //student.studentID = 1111;
 }
 saveStudentDetails(student1);
+var totalCost;
+var orderID;
+var calculateTotalCost = function (price) {
+};
+var findOderID = function (customer, productId) {
+    return orderID;
+};
+var itemPrice;
+var setItemPrice = function (price) {
+    if (typeof price === 'string') {
+        itemPrice = 0;
+    }
+    else {
+        itemPrice = price;
+    }
+};
+setItemPrice(50);
+// //** 함수의 타이핑, 선택적 매개변수와 기본 매개변수 */
+function sendGreeting(message, userName) {
+    if (userName === void 0) { userName = 'there'; }
+    console.log(message + ", " + userName);
+}
+sendGreeting('Hello');

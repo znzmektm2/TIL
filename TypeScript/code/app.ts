@@ -84,13 +84,23 @@ type StringOrNum = number | string;
 let itemPrice: number;
 
 const setItemPrice = (price: StringOrNum): void => {
-    if(typeof price === 'string') {
-        price = 0;
-    } else {
-        itemPrice = price;
-    }
+   if(typeof price === 'string') {
+       itemPrice = 0;
+   } else {
+       itemPrice = price;
+   }
 };
 
 setItemPrice(50);
 
+
+
+// //** 함수의 타이핑, 선택적 매개변수와 기본 매개변수 */
+// function sendGreeting (message: string, userName = 'there') : void {
+//     console.log(`${message}, ${userName}`);
+// } 
+
+const sendGreeting = (message: string, userName = 'there') : void => console.log(`${message}, ${userName}`);
+
+sendGreeting('Hello');
 
