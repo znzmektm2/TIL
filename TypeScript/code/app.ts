@@ -108,28 +108,29 @@ const sendGreeting = (message: string, userName = 'there') : void => console.log
 
 // //** OOP 객체지향 프로그래밍이란? 클래스와 오브젝트 관계 파헤치기 */
 class Employee {
-    private fullName: string;
-    age: number;
-    jobTitle: string;
-    hourlyRate: number;
-    workingHoursPerWeek: number;
+    constructor(
+        private _fullName: string,
+        private _age: number,
+        private _jobTitle: string,
+        private _hourlyRate: number,
+        public workingHoursPerWeek: number) {        
+    }
 
-    constructor(fullName: string, age: number,jobTitle: string, hourlyRate: number, workingHoursPerWeek: number) {
-        this.fullName = fullName;
-        this.age = age;
-        this.jobTitle = jobTitle;
-        this.hourlyRate = hourlyRate;
-        this.workingHoursPerWeek = workingHoursPerWeek;
+    get fullName() {
+        return this._fullName;
+    }
+
+    set fullName (value: string) {
+        this._fullName = value;
     }
     
     printEmployeeDetails = (): void => {
-        console.log(`${this.fullName}의 직업은 ${this.jobTitle}이고 일주일의 수입은 ${this.hourlyRate * this.workingHoursPerWeek} 달러 이다.`)
+        console.log(`${this._fullName}의 직업은 ${this._jobTitle}이고 일주일의 수입은 ${this._hourlyRate * this.workingHoursPerWeek} 달러 이다.`)
     }
 }
 
 let employee1 = new Employee('민수', 28, '주니어 웹개발자', 40, 35);
-
-// console.log(employee1.fullName);
-
+employee1.fullName = '헨리';
+console.log(employee1.fullName);
 employee1.printEmployeeDetails();
 
