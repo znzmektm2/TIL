@@ -66,18 +66,19 @@ var sendGreeting = function (message, userName) {
 // sendGreeting('Hello');
 // //** OOP 객체지향 프로그래밍이란? 클래스와 오브젝트 관계 파헤치기 */
 var Employee = /** @class */ (function () {
-    function Employee() {
+    function Employee(fullName, age, jobTitle, hourlyRate, workingHoursPerWeek) {
         var _this = this;
         this.printEmployeeDetails = function () {
             console.log(_this.fullName + "\uC758 \uC9C1\uC5C5\uC740 " + _this.jobTitle + "\uC774\uACE0 \uC77C\uC8FC\uC77C\uC758 \uC218\uC785\uC740 " + _this.hourlyRate * _this.workingHoursPerWeek + " \uB2EC\uB7EC \uC774\uB2E4.");
         };
+        this.fullName = fullName;
+        this.age = age;
+        this.jobTitle = jobTitle;
+        this.hourlyRate = hourlyRate;
+        this.workingHoursPerWeek = workingHoursPerWeek;
     }
     return Employee;
 }());
-var employee1 = new Employee();
-employee1.fullName = '민수';
-employee1.age = 28;
-employee1.jobTitle = '주니어 웹개발자';
-employee1.hourlyRate = 40;
-employee1.workingHoursPerWeek = 35;
+var employee1 = new Employee('민수', 28, '주니어 웹개발자', 40, 35);
+// console.log(employee1.fullName);
 employee1.printEmployeeDetails();
