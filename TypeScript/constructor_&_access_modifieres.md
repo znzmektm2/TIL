@@ -40,7 +40,7 @@ Class 내에 fullName 프로퍼티 앞에 private을 붙이면 아래와 같이 
 ![2021-03-31 00 03 11](https://user-images.githubusercontent.com/35294456/113011179-810a2a80-91b4-11eb-8792-9cf4e88a4c3d.png)
 
 > ## Projected 
-- Class 내부, 그리고상속받은 자식 Class 에서 접근 가능
+- Class 내부, 그리고 상속받은 자식 Class 에서 접근 가능
 
 
 # Getter & Setter
@@ -61,7 +61,7 @@ fullName에 다른 이름을 할당하여 Setter를 사용할 수 있다.
 
 ![2021-03-31 00 16 49](https://user-images.githubusercontent.com/35294456/113013136-69cc3c80-91b6-11eb-88bc-532fbfafed70.png)
 
-# Constructor와 Access Modifiers를 사용하는 방법
+# Constructor에 Access Modifiers를 사용하는 방법
 - 아래 코드와 같이 여전히 길고 반복된다고 느껴지는데 타입스크립트에서는 더 간단하게 나타낼 수 있는 방법이 있다.
 - Constructor의 매개변수에 앞에 Access Modifiers를 붙여주면 암묵적으로 Class의 필드, 멤버변수로 선언이 된다. 즉 객체가 생성될 때 Constructor의 매개변수로 전달된 값은 타입스크립트의 컴파일러에 의해서 객체의 프로퍼티 값으로 자동으로 초기화되고 할당된다.
 
