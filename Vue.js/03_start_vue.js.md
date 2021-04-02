@@ -49,7 +49,7 @@ index.html을 닫고 다시 실행하면 첫번째 로그가 사라지고 Vue �
 
 ![2021-04-03 05 04 23](https://user-images.githubusercontent.com/35294456/113450030-0eaa7c00-943a-11eb-839a-ba37e7a5c78b.png)
 
-Vue 패널을 클릭하고 '\<Root> = $vm0'을 클릭하면 Compoents에 대한 상세 내용이 나온다.
+Vue 패널을 클릭하고 '\<Root> = $vm0'을 클릭하면 Compoents에 대한 상세 내용이 나온다.  
 화면상 Hello Vue.js!는 최상위 컴포넌트의 data 속성인 message 값이다.
 
 ![2021-04-03 05 21 25](https://user-images.githubusercontent.com/35294456/113451191-6fd34f00-943c-11eb-8d48-35dd8bee95ea.png)
