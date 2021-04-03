@@ -27,8 +27,6 @@ new Vue({
 
 *인스턴스 생성* **→ beforeCreate → created → beforeMount → mounted →** *인스턴스를 화면에 부착* **→ beforeUpdate → updated →** *인스턴스 내용 갱신* **→ beforeDestroy → destroy →** *인스턴스 소멸*  
 
-![w](https://user-images.githubusercontent.com/35294456/113461177-81295500-9456-11eb-8b85-97f6a6dff107.png)
-
 ## beforeCreate
 인스턴스가 생성되고 나서 가장 처음으로 실행되는 라이프 사이클 단계이다. 이 단계에서는 data 속성과 methods 속성이 아직 인스턴스에 정의되어 있지 않고, 돔과 같은 화면 요소에도 접근할 수 없다.
 
