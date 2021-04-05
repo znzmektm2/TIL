@@ -78,11 +78,7 @@
 지역 또는 전역 컴포넌트를 인스턴스에 등록하게 되면 등록된 컴포넌트는 자동적으로 하위 컴포넌트가 되고 그 인스턴스는 상위 컴포넌트가 된다.
 
 ## 상위에서 하위 컴포넌트로 데이터를 전달하는 방법
-1. new Vue()로 인스턴스를 만들고 el, data 속성을 만든다.
-2. Vue.component()를 이용하여 하위 컴포넌트인 child-component를 등록한다.
-3. child-component의 내용에 props 속성으로 propsdata를 정의한다.
-4. HTML에 컴포넌트 태그를 추가하고 태그 속성으로 v-bind:propsdata="message"를 주는데 meessage는 상위 컴포넌트인 인스턴스의 data 안의 message 속성 값이다.
-5. child-component의 template에 정의된 \<p>{{ propsdata }}\</p>가 message 내용을 받는다.
+props 속성을 사용하여 상위에서 하위 컴포넌트로 데이터를 전달한다.
 
 ```
 <!DOCTYPE html>
@@ -114,3 +110,106 @@
   </body>
 </html>
 ```
+1. new Vue()로 인스턴스를 만들고 el, data 속성을 만든다.
+2. Vue.component()를 이용하여 하위 컴포넌트인 child-component를 등록한다.
+3. child-component의 내용에 props 속성으로 propsdata를 정의한다.
+4. HTML에 컴포넌트 태그를 추가하고 태그 속성으로 v-bind:propsdata="message"를 주는데 meessage는 상위 컴포넌트인 인스턴스의 data 안의 message 속성 값이다.
+5. child-component의 template에 정의된 \<p>{{ propsdata }}\</p>가 message 내용을 받는다.
+
+## 하위에서 상위 컴포넌트로 이벤트 전달하는 방법
+하위 컴포넌트에서 이벤트를 발생시켜 상위 컴포넌트가 해당 이벤트를 기다리고 있다가 수신하여 상위 컴포넌트의 메서드를 호출한다.    
+$emit()과 v-on:속성을 사용하여 구연한다.
+
+```
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Event Emit Sample</title>
+  </head>
+  <body>
+    <div id="app">
+      <child-component v-on:show-log="printText"></child-component>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+    <script>
+      Vue.component('child-component', {
+        template: '<button v-on:click="showLog">show</button>',
+        methods: {
+          showLog: function() {
+            this.$emit('show-log');
+          }
+        }
+      });
+
+      new Vue({
+        el: '#app',
+        data: {
+          message: 'Hello Vue! passed from Parent Component'
+        },
+        methods: {
+          printText: function() {
+            console.log("received an event");
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
+```
+1. [show] 버튼을 클릭하면 클릭 이벤트 v-on:click="showLog"에 따라 showLog() 메서드가 실행된다.
+2. showLog() 메서드 안에 this.$emit('show-log')가 실행되면서 show-log 이벤트가 발생한다.
+3. show-log 이벤트는 child-component 태그의 v-on:show-log에 전달되고, v-on:show-log의 대상 메서드인 최상위 컴포넌트의 메서드 printText()가 실행된다.
+4. printText()가 실행되여 콘솔로그가 출력된다.
+
+## 관계 없는 컴포넌트 간 통신하는 방법
+상위 - 하위 구조를 유지하지 않고 데이터를 주고 받으려면 이벤트 버스를 이용하면 된다.  
+이벤트 버스를 구현하려면 새로운 인스턴스 1개를 더 생성하고, 그 인스턴스를 이용하여 이벤트를 보내고 받는다.  
+보내는 컴포넌트에서는 .$emit()을, 받는 컴포넌트에서는 .$on()을 구현한다.
+
+```
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Event Bus Sample</title>
+  </head>
+  <body>
+    <div id="app">
+      <child-component></child-component>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+    <script>
+      var eventBus = new Vue();
+
+      Vue.component('child-component', {
+        template: '<div>하위 컴포넌트 영역입니다.<button v-on:click="showLog">show</button></div>',
+        methods: {
+          showLog: function() {
+            eventBus.$emit('triggerEventBus', 100);
+          }
+        }
+      });
+
+      var app = new Vue({
+        el: '#app',
+        created: function() {
+          eventBus.$on('triggerEventBus', function(value){
+            console.log("이벤트를 전달 받음. 전달 받은 값 : ", value);
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
+```
+
+1. 이벤트 버스로 활용할 새 인스턴스를 1개 생성하고, eventBus라는 변수에 할당한다.
+2. 하위 컴포넌트에는 template 속성과 methods 속성을 정의한다. template 속성에 show라는 버튼을 추가한다. methods 속성에는 showLog() 메서드를 정의하고, 메서드 안에는 eventBus.$emit()을 선언하여 첫번째 인자로 triggerEventBus라는 이벤트를 발생시키는 로직을 추가하고, 두번째 인자로는 이벤트가 발생했을 때 전달받을 100이라는 숫자를 넣는다.
+3. 상위 컴포넌트의 created 라이프 사이클 훅에 eventBus.$on()으로 이벤트를 받는 로직을 선언한다. 발생한 이벤트 triggerEventBus를 수신할 때 앞에서 전달된 인자 값 100이 콘솔에 출력된다.
+
+이벤트 버스를 활용하면 props 속성을 이용하지 않고도 원하는 컴포넌트 간에 직접적인 데이터를 전달할 수 있어 편리하지만 컴포넌트가 많아지면 어디서 어디로 보냈는지 관리가 되지 않는 문제가 발생한다. 이를 해결하려면 Vuex라는 상태 관리 도구가 필요하다.
