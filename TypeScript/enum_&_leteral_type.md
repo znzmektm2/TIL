@@ -65,7 +65,12 @@ var GenderType;
 
 ```
 interface Student {
-    gender: "male" | "female"
+    readonly studentID: number;
+    studentName: string;
+    age?: number;
+    gender: "male" | "female";
+    subject: string;
+    courseCompleted: boolean;
 }
 ```
 
