@@ -82,7 +82,7 @@
 2. Vue.component()를 이용하여 하위 컴포넌트인 child-component를 등록한다.
 3. child-component의 내용에 props 속성으로 propsdata를 정의한다.
 4. HTML에 컴포넌트 태그를 추가하고 태그 속성으로 v-bind:propsdata="message"를 주는데 meessage는 상위 컴포넌트인 인스턴스의 data 안의 message 속성 값이다.
-5. child-component의 template에 정의된 <p>{{ propsdata }}</p>가 message 내용을 받는다.
+5. child-component의 template에 정의된 \<p>{{ propsdata }}\</p>가 message 내용을 받는다.
 
 ```
 <!DOCTYPE html>
